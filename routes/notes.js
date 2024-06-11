@@ -5,11 +5,10 @@ var router = express.Router();
 
 // 接続情報を設定  uriは消してGithubに。
 const { MongoClient } = require("mongodb");
-const uri = "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD";
+const uri = "";
 const client = new MongoClient(uri);
 
-router.get('/', async (req, res) => {
-// データベース、コレクションを指定
+router.get('/', async (req, res) => {// データベース、コレクションを指定
 const database = client.db('notes');
 const notes = database.collection('notes');
 
