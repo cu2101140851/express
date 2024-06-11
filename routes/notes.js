@@ -5,7 +5,7 @@ var router = express.Router();
 
 // 接続情報を設定  uriは消してGithubに。
 const { MongoClient } = require("mongodb");
-const uri = "abcdefg000000000aaaaaaabbbbbb";
+const uri = "*****************";
 const client = new MongoClient(uri);
 
 router.get('/', async (req, res) => {
