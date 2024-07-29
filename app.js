@@ -11,7 +11,8 @@ var usersRouter = require('./routes/users');
 var helloRouter = require('./routes/hello');
 var notesRouter = require('./routes/notes');
 var dogRouter = require('./routes/dog');
-//var catRouter = require('./routes/cat');
+var catRouter = require('./routes/cat'); // cat
+var notes_from_bRouter = require('./routes/notes_from_b'); // 14章で追加
 
 var app = express();
 
@@ -30,7 +31,8 @@ app.use('/users', usersRouter);
 app.use('/hello', helloRouter);
 app.use('/notes', notesRouter);
 app.use('/dog', dogRouter);
-//app.use('/cat', catRouter);
+app.use('/cat', catRouter); // cat
+app.use('/notes_from_b', notes_from_bRouter); // 14章で追加
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 
