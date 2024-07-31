@@ -9,10 +9,13 @@ const { MongoClient } = require("mongodb");
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
+// corsミドルウェアを使用
+router.use(cors());
+
 router.get('/', async (req, res) => {// データベース、コレクションを指定
 const database = client.db('notes');
 const notes = database.collection('notes');
-
+  
 // idが１のドキュメントを取得
 const query = { id: 2 };
 const note = await notes.findOne(query);
