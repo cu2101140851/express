@@ -4,9 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-//var index = require('./routes/index');
+var index = require('./routes/index'); //
 var indexRouter = require('./routes/index');
-//var users = require('./routes/users');
+var users = require('./routes/users'); //
 var usersRouter = require('./routes/users');
 var helloRouter = require('./routes/hello');
 var notesRouter = require('./routes/notes');
@@ -17,10 +17,10 @@ var notes_from_bRouter = require('./routes/notes_from_b'); // 14章で追加
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, 'views')); //
+app.set('view engine', 'jade'); //
 
-app.use(logger('dev'));
+app.use(logger('dev')); //
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -28,8 +28,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/hello', helloRouter);
-app.use('/notes', notesRouter);
+app.use('/hello', helloRouter); //
+app.use('/notes', notesRouter); //
 app.use('/dog', dogRouter);
 app.use('/cat', catRouter); // cat
 app.use('/notes_from_b', notes_from_bRouter); // 14章で追加
